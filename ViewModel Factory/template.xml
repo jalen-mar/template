@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="ViewModel Factory"
+    minApi="21"
+    description="Create a new ViewModel that supports the WindowModel.">
+
+    <category value="Custom" />
+    <formfactor value="Mobile" />
+
+    <parameter id="modelName"
+        name="ViewModel Name"
+        type="String"
+        help="Name of ViewModel" />
+
+    <parameter
+        id="isSupportIOC"
+        name="Support IOC"
+        type="boolean"
+        default="true"
+        help="Whether IOC is supported" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

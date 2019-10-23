@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="DataBinding View"
+    minApi="21"
+    description="Create a new dataBinding component that supports the BaseComponent.">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="componentType"
+        name="Component Type"
+        type="enum"
+        default="Activity"
+        help="Type of component">
+        <option id="Activity">Activity</option>
+        <option id="Fragment">Fragment</option>
+    </parameter>
+
+    <parameter
+        id="className"
+        name="Component Name"
+        type="string"
+        default="${componentType}"
+        constraints="class|unique|nonempty"
+        help="The name of the component class to create" />
+
+    <parameter
+        id="screenOrientation"
+        name="Screen Orientation"
+        type="enum"
+        default="portrait"
+        visibility="componentType == 'Activity'"
+        help="Direction of activity">
+        <option id="portrait">portrait</option>
+        <option id="landscape">landscape</option>
+        <option id="unspecified">unspecified</option>
+        <option id="behind">behind</option>
+        <option id="user">user</option>
+        <option id="sensor">sensor</option>
+        <option id="nosensor">nosensor</option>
+    </parameter>
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${camelCaseToUnderscore(componentType)}_${classToResource(className)}"
+        help="The name of the layout to create for the component" />
+
+    <parameter
+        id="generateTitle"
+        name="Generate Activity Title"
+        type="boolean"
+        default="true"
+        help="If true, the component title will be generated" />
+
+    <parameter
+        id="titleName"
+        name="Title Name"
+        type="string"
+        default=""
+        visibility="generateTitle"
+        help="Title of the current component" />
+
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        visibility="componentType == 'Activity'"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter
+        id="isSupportDataBinding"
+        name="Support DataBinding"
+        type="boolean"
+        default="true"
+        help="Whether data binding is supported" />
+
+    <parameter
+        id="isSupportIOC"
+        name="Support IOC"
+        type="boolean"
+        default="true"
+        help="Whether IOC is supported" />
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
