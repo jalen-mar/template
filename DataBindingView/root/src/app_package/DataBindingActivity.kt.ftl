@@ -52,15 +52,5 @@ class ${className} : BaseActivity<<#if isSupportDataBinding>${ViewDataBindingNam
     }
 </#if>
 
-    fun notify(msg: String) {
-        Toast.show(msg)
-    }
-
-    companion object {
-        fun Context.forword${className}() {
-            startActivity<${className}>()
-        }
-    }
-
 <#include "../../../../common/jni_code_snippet.kt.ftl">
 }

@@ -51,16 +51,5 @@ public class ${className} extends BaseFragment<<#if isSupportDataBinding>${ViewD
     }
 </#if>
 
-    public void notify(String msg) {
-        Toast.show(msg);
-    }
-
-    public static ${className} newInstance() {
-        ${className} result = new ${className}();
-        Bundle bundle = new Bundle();
-        result.setArguments(bundle);
-        return result;
-    }
-
 <#include "../../../../common/jni_code_snippet.java.ftl">
 }

@@ -57,14 +57,5 @@ public class ${className} extends BaseActivity<<#if isSupportDataBinding>${ViewD
     }
 </#if>
 
-    public void notify(String msg) {
-        Toast.show(msg);
-    }
-
-    public static void forword${className}(Context context) {
-        Intent intent = new Intent(context, ${className}.class);
-        context.startActivity(intent);
-    }
-
 <#include "../../../../common/jni_code_snippet.java.ftl">
 }

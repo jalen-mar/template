@@ -46,18 +46,5 @@ class ${className} : BaseFragment<<#if isSupportDataBinding>${ViewDataBindingNam
     }
 </#if>
 
-    fun notify(msg: String) {
-        Toast.show(msg)
-    }
-
-    companion object {
-        fun newInstance(): ${className} {
-            val result = ${className}()
-            val bundle = Bundle()
-            result.arguments = bundle
-            return result
-        }
-    }
-
 <#include "../../../../common/jni_code_snippet.kt.ftl">
 }
