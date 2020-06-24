@@ -1,7 +1,5 @@
 package ${packageName};
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -17,7 +15,6 @@ import ${applicationPackage}.databinding.${ViewDataBindingName}Binding;
 import androidx.databinding.ViewDataBinding;
 </#if>
 import com.gemini.jalen.ligament_commons.app.BaseActivity;
-import com.gemini.jalen.ligament.widget.Toast;
 
 public class ${className} extends BaseActivity<<#if isSupportDataBinding>${ViewDataBindingName}Binding<#else>ViewDataBinding</#if>> {
     @Override
@@ -56,6 +53,4 @@ public class ${className} extends BaseActivity<<#if isSupportDataBinding>${ViewD
         return ACTION_UNABLE;
     }
 </#if>
-
-<#include "../../../../common/jni_code_snippet.java.ftl">
 }

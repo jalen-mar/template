@@ -6,7 +6,7 @@
     minApi="21"
     description="Create a new dataBinding component that supports the BaseComponent.">
 
-    <category value="Activity" />
+    <category value="Custom" />
     <formfactor value="Mobile" />
 
     <parameter

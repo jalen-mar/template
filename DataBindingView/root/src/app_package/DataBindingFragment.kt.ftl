@@ -16,7 +16,6 @@ import ${applicationPackage}.databinding.${ViewDataBindingName}Binding
 import androidx.databinding.ViewDataBinding
 </#if>
 import com.gemini.jalen.ligament_commons.app.BaseFragment
-import com.gemini.jalen.ligament.widget.Toast
 
 class ${className} : BaseFragment<<#if isSupportDataBinding>${ViewDataBindingName}Binding<#else>ViewDataBinding</#if>>() {
     override fun getLayout(): Int {
@@ -45,6 +44,4 @@ class ${className} : BaseFragment<<#if isSupportDataBinding>${ViewDataBindingNam
         return getString(R.string.title_${classResourceName})
     }
 </#if>
-
-<#include "../../../../common/jni_code_snippet.kt.ftl">
 }

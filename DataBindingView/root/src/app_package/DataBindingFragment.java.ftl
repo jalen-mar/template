@@ -17,7 +17,6 @@ import ${applicationPackage}.databinding.${ViewDataBindingName}Binding;
 import androidx.databinding.ViewDataBinding;
 </#if>
 import com.gemini.jalen.ligament_commons.app.BaseFragment;
-import com.gemini.jalen.ligament.widget.Toast;
 
 public class ${className} extends BaseFragment<<#if isSupportDataBinding>${ViewDataBindingName}Binding<#else>ViewDataBinding</#if>> {
     @Override
@@ -50,6 +49,4 @@ public class ${className} extends BaseFragment<<#if isSupportDataBinding>${ViewD
         return getString(R.string.title_${classResourceName});
     }
 </#if>
-
-<#include "../../../../common/jni_code_snippet.java.ftl">
 }

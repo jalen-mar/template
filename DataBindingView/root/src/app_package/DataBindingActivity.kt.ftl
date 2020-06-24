@@ -1,11 +1,8 @@
 package ${escapeKotlinIdentifiers(packageName)}
 
-import android.content.Context
 import android.os.Bundle
 
 import kotlinx.android.synthetic.main.${layoutName}.*
-
-import org.jetbrains.anko.startActivity
 
 <#if applicationPackage??>
 import ${applicationPackage}.R
@@ -18,7 +15,6 @@ import ${applicationPackage}.databinding.${ViewDataBindingName}Binding
 import androidx.databinding.ViewDataBinding
 </#if>
 import com.gemini.jalen.ligament_commons.app.BaseActivity
-import com.gemini.jalen.ligament.widget.Toast
 
 class ${className} : BaseActivity<<#if isSupportDataBinding>${ViewDataBindingName}Binding<#else>ViewDataBinding</#if>>() {
     override fun getLayout(): Int {
@@ -51,6 +47,4 @@ class ${className} : BaseActivity<<#if isSupportDataBinding>${ViewDataBindingNam
         return ACTION_UNABLE
     }
 </#if>
-
-<#include "../../../../common/jni_code_snippet.kt.ftl">
 }
